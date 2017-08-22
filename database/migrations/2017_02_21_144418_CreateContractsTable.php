@@ -20,7 +20,7 @@ class CreateContractsTable extends Migration
             $table->date('data_start');
             $table->date('data_end');
             $table->char('contract_number',90);
-            $table->char('pos',10);
+            $table->char('pos',60);
             $table->char('typ',1);
             $table->char('weryfikacja',1);
             $table->date('data_weryfikacji');

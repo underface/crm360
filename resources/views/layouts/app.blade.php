@@ -22,16 +22,6 @@
     </script>
 </head>
 <body>
-
-<!-- preloader-->
-
-<div id="loader-wrapper">
-    <div class="load">
-      <hr/><hr/><hr/><hr/>
-    </div>
-</div>
-
-
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -126,18 +116,6 @@
     });
 });
 
-  </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script>
-  $('html').addClass('js');
-
-  $(window).load(function() {
-		setTimeout(
-		  function()
-		  {
-			   $("#loader-wrapper").fadeOut();
-		  },3000);
-  });
   </script>
 
 </body>

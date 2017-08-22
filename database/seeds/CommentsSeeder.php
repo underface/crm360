@@ -19,8 +19,8 @@ class CommentsSeeder extends Seeder
         {
             DB::table('comments') -> insert(
                 [
-                    'contract_id'  => $faker->numberBetween(1,4000000),
-                    'user_id'      => $faker->numberBetween(1,1),
+                    'contract_id'  => $faker->numberBetween(1,1000000),
+                    'user_id'      => $faker->numberBetween(1,7000),
                     'comments'     => $faker->text(100),
 
                 ]

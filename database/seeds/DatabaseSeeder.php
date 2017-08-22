@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     {
 
         $this -> call(ContactsSeeder::class);
-        //$this -> call(CommentsSeeder::class);
+        $this -> call(CommentsSeeder::class);
         $this -> call(CustomersSeeder::class);
     }
 }
