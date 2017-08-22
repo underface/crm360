@@ -44,10 +44,7 @@ class ContractController extends Controller
           })
           ->paginate(20);
       $time_end = microtime(true);
-       $time = $time_end - $time_start;
-
-       dd($time);
-
+      $time = $time_end - $time_start;
       return view('contracts.index')->withCustomers($customers)->withTime($time);
 
 

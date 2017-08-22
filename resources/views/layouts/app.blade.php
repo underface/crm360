@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
@@ -44,7 +45,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -91,9 +92,9 @@
     </div>
 
     <!-- Scripts -->
+
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.0/clipboard.min.js"></script>
-    <script src="https://clipboardjs.com/assets/scripts/tooltips.js"></script>
 
       <script>
        var clipboard = new Clipboard('.btn');
@@ -117,5 +118,6 @@
 });
 
   </script>
+  @yield('scripts')
 </body>
 </html>

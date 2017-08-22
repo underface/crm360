@@ -20,11 +20,9 @@
                  {{$time}} sekund
               </div>
            </div>
-
-
 @foreach($customers as $customer)
-  
-          
+
+
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4>
@@ -35,7 +33,7 @@
         <table class="table table-striped tabel-hover table-condensed">
           <thead>
             <tr>
-              <th>Numer</th><th>Data rozpoczęcia</th><th>Data zakończenia</th><th>Numer umowy</th><th>POS</th>
+              <th>Numer</th><th>Data rozpoczęcia</th><th>Data zakończenia</th><th>Numer umowy</th><th>POS</th><th></th>
             </tr>
           </thead>
           @foreach($customer->contracts as $contract)
@@ -56,8 +54,8 @@
           </tr>
           @endforeach
         </table>
-      </div>    
-    </div> 
+      </div>
+    </div>
 @endforeach
           <center> {{ $customers->links() }}</center>
 

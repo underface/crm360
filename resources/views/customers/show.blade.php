@@ -17,9 +17,10 @@
                     <tr>
                       <td>Nr klienta:</td>
                       <td class="number"><b>{{ $customer->customer_number }}</b>
-                      <button class="btn btn-xs btn-info" data-clipboard-text="{{ $customer->customer_number }}" data-toggle="tooltip" title="Skopiowano!">
+                      <button class="btn btn-xs btn-info" id="btn-copy" data-clipboard-text="{{ $customer->customer_number }}" data-toggle="tooltip" title="Skopiowano!">
                           <i class="fa fa-clipboard" aria-hidden="true"></i> Kopiuj
                       </button>
+                      <button class="btn btn-xs btn-success" id="btn-copy2"><i class="fa fa-check" aria-hidden="true"></i> OK</button>
 
                       </td>
                     </tr>
@@ -174,5 +175,18 @@
   </div>
     </div>
 </div>
+
+@endsection
+
+
+@section('scripts')
+   <script type="text/javascript">
+   var clip = new Clipboard('#btn-copy');
+
+      clip.on('success', function(e) {
+         $('#btn-copy').hide();
+         $('#btn-copy2').show();
+      });
+   </script>
 
 @endsection
