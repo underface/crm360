@@ -17,19 +17,19 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        
+
         //$customers = DB::table('customers')->paginate(50);
-       
+
        $customers = Customer::with('contracts')
           ->whereHas('contracts', function ($query) {
               $query->where('pos', 'Ropczyce');
           })->paginate(30);
-       
+
         return view('customers.index', compact('customers'));
     }
 
-    
- 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -60,16 +60,14 @@ class CustomerController extends Controller
     public function show($id)
     {
         $customer = Customer::findorfail($id);
-      
+
         $contracts = Contract::where("customer_id","=",$id)
                               ->where("typ","=","U")
-                              ->where("pos","=",Auth::user()->pos)
                               ->orderBy('data_end', 'desc')
                               ->get();
-      
+
       $prepaids = Contract::where("customer_id","=",$id)
                               ->where("typ","=","K")
-                              ->where("pos","=",Auth::user()->pos)
                               ->orderBy('data_start', 'desc')
                               ->get();
 

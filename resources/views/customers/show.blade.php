@@ -11,28 +11,25 @@
     <div class="row">
         <div class="col-md-4">
           <div class="panel panel-default">
-                <div class="panel-heading"><h4>{{ $customer->name }}</h4></div>
-                <div class="panel-body">
-                  <table class="table">
-                    <tr>
-                      <td>Nr klienta:</td>
-                      <td class="number"><b>{{ $customer->customer_number }}</b>
-                      <button class="btn btn-xs btn-info" id="btn-copy" data-clipboard-text="{{ $customer->customer_number }}" data-toggle="tooltip" title="Skopiowano!">
+                <div class="panel-heading"><h3>{{ $customer->name }}</h3></div>
+                <div class="panel-body ">
+                   <label>Nr klienta:</label>
+                   <h4>{{ $customer->customer_number }}</h4>
+                   <p>
+                      <button class="btn btn-xs btn-info" id="btn-copy" data-clipboard-text="{{ $customer->customer_number }}">
                           <i class="fa fa-clipboard" aria-hidden="true"></i> Kopiuj
                       </button>
-                      <button class="btn btn-xs btn-success" id="btn-copy2"><i class="fa fa-check" aria-hidden="true"></i> OK</button>
+                      <span id="btn-copy2" class="label label-success"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Skopiowano</span>
+                   </p>
+                   <hr />
 
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Typ Klienta:</td>
-                      <td><b>{{ ($customer->customer_type == 'P') ? "Prywatny": "Firma" }}</b></td>
-                    </tr>
-                    <tr>
-                      <td>Numer kontaktowy</td>
-                      <td><b>{{ $customer->customer_contact }}</b></td>
-                    </tr>
-                  </table>
+                   <label>Numer kontaktowy</label>
+                   <h4>{{ $customer->customer_contact }}</h4>
+                   <hr />
+
+                   <label>Typ Klienta:</label>
+                   <h4>{{ ($customer->customer_type == 'P') ? "Prywatny": "Firma" }}</h4>
+                   <hr />
                 </div>
             <div class="panel-footer">
               <a href="#" class="btn btn-warning btn-block btn-sm"><i class="fa fa-pencil" aria-hidden="true"></i></i> Edytuj dane profilu</a>
@@ -180,13 +177,17 @@
 
 
 @section('scripts')
+   <script type="text/javascript" src="https://clipboardjs.com/dist/clipboard.min.js"></script>
+
    <script type="text/javascript">
    var clip = new Clipboard('#btn-copy');
 
       clip.on('success', function(e) {
-         $('#btn-copy').hide();
-         $('#btn-copy2').show();
+      $('#btn-copy2').show();
+      $('#btn-copy2').fadeOut(2000);
       });
    </script>
+
+
 
 @endsection
