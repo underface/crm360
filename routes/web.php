@@ -20,5 +20,6 @@ Auth::routes(
 	);
 
 Route::get('/home', 'HomeController@index');
+
 Route::resource('/contract', 'ContractController');
 Route::resource('/customer', 'CustomerController');

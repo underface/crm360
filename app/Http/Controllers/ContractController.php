@@ -27,9 +27,9 @@ class ContractController extends Controller
     {
 
      $time_start = microtime(true);
-     sleep(1);
+       sleep(1);
 
-     $customers = Customer::with(['contracts' => function($query)
+     $customers = Customer::select(['customer_number','id','name'])->with(['contracts' => function($query)
            {
               $query->where('pos', 'Ropczyce')
                     ->where('typ', 'U')
@@ -44,12 +44,15 @@ class ContractController extends Controller
           })
           ->paginate(20);
       $time_end = microtime(true);
-      $time = $time_end - $time_start;
+       $time = $time_end - $time_start;
+
+
+
       return view('contracts.index')->withCustomers($customers)->withTime($time);
-
-
-
     }
+
+
+    
     public function create()
     {
         //
