@@ -59,6 +59,7 @@
 
                                 <li><a href="{{ route('customer.index') }}">Lista klientów</a></li>
                                 <li><a href="{{ route('contract.index') }}">Umowy</a></li>
+                                <li><a href="{{ route('testajax.index') }}">Test</a></li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -93,17 +94,18 @@
 
     <!-- Scripts -->
 
-    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.0/clipboard.min.js"></script>
 
       <script>
-       var clipboard = new Clipboard('.btn');
+       var clipboard = new Clipboard('#btn-copy');
         clipboard.on('success', function(e) {
     });
 
       </script>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+   <!-- <script src="{{ asset('js/app.js') }}"></script>-->
   <script>
 
   $(document).ready(function () {

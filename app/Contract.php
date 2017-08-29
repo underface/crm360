@@ -10,4 +10,9 @@ class Contract extends Model
     {
         return $this->belongsTo('App\Customer');
     }
+
+    public function comments()
+    {
+      return $this->hasMany('App\Comment');
+   }
 }

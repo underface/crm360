@@ -21,5 +21,9 @@ Auth::routes(
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/test', 'HomeController@test')->name('testajax.index');
+Route::post('/testget', 'HomeController@testget')->name('testajax.get');
+Route::post('/testgetjson', 'HomeController@testgetjson')->name('testajax.getjson');
+
 Route::resource('/contract', 'ContractController');
 Route::resource('/customer', 'CustomerController');
