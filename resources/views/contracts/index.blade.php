@@ -37,7 +37,7 @@
             </tr>
           </thead>
           @foreach($customer->contracts as $contract)
-          <tr>
+          <tr id="row_{{$contract->id}}">
             <td>{{ $contract->id }}</td>
             <td>{{ $contract->phone_number }}</td>
             <td>{{ $contract->data_start }}</td>
@@ -68,7 +68,7 @@
 
                <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">
+                    <h4 class="modal-title" id="modal-title">
                       Komentarze
                     </h4>
                </div>
@@ -115,6 +115,7 @@
    		var uid = $(this).attr('data-id');
    		   $('#dynamic-content').hide();
    	   	$('#modal-loader').show();
+            $('#row_'+uid).hide();
    		$.ajax({
             url: '{{route('testajax.get')}}',
             type: 'POST',
